@@ -98,9 +98,19 @@
             ],
             "scripts": []
           }
-        }
+        },
+
+    "deploy": {
+      "builder": "angular-cli-ghpages:deploy",
+      "options": {
+        "baseHref": "https://noubarkalost.github.io/Draw/",
+        "name": "Draw",
+        "email": "noubar.kaloust@gmail.com"
       }
     }
-  },
+  }
+}
+},
+
   "defaultProject": "draw"
 }

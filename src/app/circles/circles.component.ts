@@ -7,37 +7,36 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./circles.component.css']
 })
 export class CirclesComponent implements OnInit {
-  public toggle: boolean = false;
+  generated: boolean = false
   items: Array<string> =[];
+  arrayColors: any = { };
   circleDiameter!: number;
+  selectedColor: string = 'color';
 
 
-  handleAdd(count:number) {
+  onAdd(count:number) {
     this.items.length = count;
-
+    this.generated = true
     if(count === 100){
       this.circleDiameter = 50;
     } else if(count === 225){
-      this.circleDiameter = 32;
+      this.circleDiameter = 40;
     } else {
-      this.circleDiameter = 23;
+      this.circleDiameter = 26;
     }
   }
 
-  handleReset() {
+  onReset() {
     this.items.length = 0;
+    this.generated = !this.generated
   }
 
 
-  public arrayColors: any = {
 
-  };
 
-  public selectedColor: string = 'color1';
 
-  public color1: string = '#2889e9';
 
-  constructor() {}
+
 
   ngOnInit(): void {
   }
