@@ -1,27 +1,32 @@
+
 <div class="button-container">
   <button class="button is-rounded is-link" (click)="onAdd(100)">Add 100</button>
   <button class="button is-rounded is-primary" (click)="onAdd(225)">Add 225</button>
   <button class="button is-rounded is-warning" (click)="onAdd(400)">Add 400</button>
   <button class="button is-rounded is-danger" [disabled]="!generated" (click)="onReset()">Reset</button>
 </div>
-
-<div class="center" *ngIf="generated">
-<span [style.background]="arrayColors[selectedColor]"
+  <div class="main-container">
+<div  *ngIf="generated">
+  <span [style.background]="arrayColors[selectedColor]"
       [cpToggle]="true"
       [cpDialogDisplay]="'inline'"
       [cpCancelButton]="true"
-      [(colorPicker)]="arrayColors[selectedColor]"></span>
+      [cpCancelButtonText]="'Reset'"
+      [(colorPicker)]="arrayColors[selectedColor]">
+
+  </span>
 </div>
 
-<div class="center">
-
-    <div
-      class="circle"
-      [style.width.px]="circleDiameter"
-      [style.height.px]="circleDiameter"
-      [style.background]="arrayColors['color' + i]"
-      (click)="selectedColor='color'+ i"
-      *ngFor="let item of items; let i = index ">
-    </div>
+<div class="container">
+  <div class="circle-container">
+    <div class='circle'
+    [style.width.px]="circleDiameter"
+    [style.height.px]="circleDiameter"
+    [style.background]="arrayColors['color' + i + k]"
+    (click)="selectedColor='color'+ i + k"
+    *ngFor="let item of items; let i = index ">
+  </div>
+</div>
+</div>
 
 </div>

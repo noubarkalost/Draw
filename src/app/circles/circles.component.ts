@@ -9,20 +9,25 @@ import {Component, OnInit} from '@angular/core';
 export class CirclesComponent implements OnInit {
   generated: boolean = false
   items: Array<string> =[];
-  arrayColors: any = { };
+  arrayColors: any = {};
   circleDiameter!: number;
   selectedColor: string = 'color';
+  k!:number
 
 
   onAdd(count:number) {
+    this.items.length = 0;
     this.items.length = count;
     this.generated = true
     if(count === 100){
+      this.k = 111
       this.circleDiameter = 50;
     } else if(count === 225){
-      this.circleDiameter = 40;
+      this.k = 222
+      this.circleDiameter = 32;
     } else {
-      this.circleDiameter = 26;
+      this.k = 333
+      this.circleDiameter = 24;
     }
   }
 
@@ -30,13 +35,6 @@ export class CirclesComponent implements OnInit {
     this.items.length = 0;
     this.generated = !this.generated
   }
-
-
-
-
-
-
-
 
   ngOnInit(): void {
   }
